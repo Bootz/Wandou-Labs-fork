@@ -65,7 +65,7 @@ Manifest 版本号。为了与当前版本的 Chrome 兼容，取值应该使用
 * 正方形
 * 图形区域大小 60*60 ，绝对居中，图形需填满图形区域并不能超出图形区域
 * 必须要有背景颜色且不能是白色
-
+![图标规范][icon]
 
 ### app
 
@@ -191,3 +191,9 @@ JavaScript 文件何时插入，可选的值包括：`'document_start'`、`'docu
 ### minimum_client_version
 
 扩展可以支持的豌豆荚客户端最低版本号（[类似 Chrome 的 `minimum_chrome_version`](http://code.google.com/chrome/extensions/manifest.html#minimum_chrome_version)）。格式与 `version` 一致。
+
+
+
+
+
+  [icon]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/pictures/icon_sample.png?raw=true
