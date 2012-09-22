@@ -23,6 +23,7 @@
 *  从豌豆荚2.20版本开始，支持[Android Intent API]
 *  从豌豆荚2.20版本开始，支持Web Fonts
 *  从豌豆荚2.20版本开始，支持支付宝支付
+*  从豌豆荚2.24版本开始，支持zip包解压，详情请查看[Zipped Data Download Spec]
 
 ### 2.3 开发扩展系统时Content Script的Guideline
 * 页面宽度修改为适应豌豆荚的默认宽度：780px（考虑会有滚动条，建议控制在760px内）
@@ -56,6 +57,7 @@
 * content-type 的主要类型(特殊类型的格式需要特殊约定):
 
     - {"application", "apps", "apk"},
+    - {"application/zip", "zip", "zip"},
     - {"application/vnd.android.package-archive", "apps", "apk"},
     - {"image", "photo", "*"},
     - {"image/jpeg", "photo", "jpg"},
@@ -209,3 +211,4 @@
   [package_extension]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/pictures/package_extension.jpg?raw=true
   [extension_online]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/pictures/extension_online.jpg?raw=true
   [sample package]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/files/search.zip?raw=true
+  [Zipped Data Download Spec]:  https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/Zipped%20Data%20Download%20Spec.md
