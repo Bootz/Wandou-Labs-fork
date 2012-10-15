@@ -19,7 +19,7 @@ filepath：解压文件传输到手机的路径。
 
 ### Sample
 
-`<a rel="download" href="http://www.example.com/sample.zip#name=example&content-type=application/zip&filepath=/sdcard/sample">example</a>`
+&lt;a rel="download" href="http://www.example.com/sample.zip#name=example&content-type=application/zip&filepath=/sdcard/sample"&gt; example &lt;a&gt;
 
 将 sample.zip 解压后传输到手机 sd 卡的 sample 目录。
 
@@ -47,13 +47,15 @@ action: install 表示该 zip 文件是游戏包，需要安装 APK 文件。
 
 sample.zip 的文件结构
 
+<pre>
 sample.zip ----- sample.apk
 
       |
       
       |    ----- data  ...
+</pre>
 
-`<a rel="download" href="http://www.example.com/sample.zip#name=example&content-type=application/zip&filepath=/sdcard/sample&action=install">example</a>`
+&lt;a rel="download" href="http://www.example.com/sample.zip#name=example&content-type=application/zip&filepath=/sdcard/sample&action=install"&gt; example &lt;a&gt;
 
 将 sample.zip 解压后安装 sample.apk，然后传输压缩包中的 data 目录到手机 sd 卡的 sample 目录。
 
