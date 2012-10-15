@@ -22,6 +22,7 @@ Manifest 是一个必须的文件，放在扩展打包的根目录下，用于�
 		"app": {...},
 		"content_scripts": [...],
 		"homepage_url": "http://path/to/homepage",
+		"permissions": ["http://*.baidu.com/*", "http://*.sina.com.cn/*"],
 		"minimum_client_version": "versionString"
 	}
 
@@ -188,6 +189,10 @@ JavaScript 文件何时插入，可选的值包括：`'document_start'`、`'docu
 ### homepage_url
 
 扩展首页地址。如果扩展通过扩展商店发布，则默认指向扩展商店详情页。
+
+### permissions
+
+指定跨域访问。如果需要跨域访问，需要在这里指定需要跨域访问的规则。
 
 ### minimum_client_version
 
