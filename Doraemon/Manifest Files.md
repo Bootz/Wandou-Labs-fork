@@ -198,7 +198,9 @@ JavaScript 文件何时插入，可选的值包括：`'document_start'`、`'docu
 
 扩展可以支持的豌豆荚客户端最低版本号（[类似 Chrome 的 `minimum_chrome_version`](http://code.google.com/chrome/extensions/manifest.html#minimum_chrome_version)）。格式与 `version` 一致。
 
+### user_agent
 
+可以使用 user_agent 更改扩展页面请求的 user-agent。不指定将使用豌豆荚默认的 user-agent。
 
 
 
