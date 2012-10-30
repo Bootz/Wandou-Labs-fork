@@ -23,7 +23,8 @@ Manifest 是一个必须的文件，放在扩展打包的根目录下，用于�
 		"content_scripts": [...],
 		"homepage_url": "http://path/to/homepage",
 		"permissions": ["http://*.baidu.com/*", "http://*.sina.com.cn/*"],
-		"minimum_client_version": "versionString"
+		"minimum_client_version": "versionString",
+        "user_agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.16 (KHTML, like Gecko) Chrome/24.0.1305.3 Safari/537.16"
 	}
 
 ## 字段
