@@ -4,12 +4,12 @@ Android Intent
 1. Overview
 ------
 
- * Android IntentµÄÄ¿µÄÊÇÎªÁË¸ø¿ª·¢ÕßÌá¹©Ò»¸öÍ¨¹ıjsµ÷ÓÃÔÚandroidÊÖ»úÉÏÆô¶¯Ò»¸öintentµÄ·½·¨¡£
- * Web Intent£º
-     Web IntentÊÇÀàËÆÓëandroid intentµÄÒ»¸ö»úÖÆ£¬µ«ÊÇËüµÄÄ¿µÄ»¹ÊÇÓÃÓÚweb£¬¼´ÔÚwebÉÏÄ£Äâandroid intent¡£
- * Android Intent£º
-     Android IntentÊÇÒ»¸öÔÚandroidÊÖ»úÉÏÆô¶¯intentµÄ·½Ê½¡£
- * ¶ÔÓÚÍã¶¹¼Ô°Ù±¦´ü¶øÑÔ£¬ĞèÒª×ÛºÏÁ½ÖÖµÄÌØµã£¬ÊµÏÖÒ»ÖÖÍ¨¹ıjsµÄ·½Ê½À´ÔÚÊÖ»úÉÏÆô¶¯Ò»¸öintent¡£
+ * Android Intentçš„ç›®çš„æ˜¯ä¸ºäº†ç»™å¼€å‘è€…æä¾›ä¸€ä¸ªé€šè¿‡jsè°ƒç”¨åœ¨androidæ‰‹æœºä¸Šå¯åŠ¨ä¸€ä¸ªintentçš„æ–¹æ³•ã€‚
+ * Web Intentï¼š
+     Web Intentæ˜¯ç±»ä¼¼ä¸android intentçš„ä¸€ä¸ªæœºåˆ¶ï¼Œä½†æ˜¯å®ƒçš„ç›®çš„è¿˜æ˜¯ç”¨äºwebï¼Œå³åœ¨webä¸Šæ¨¡æ‹Ÿandroid intentã€‚
+ * Android Intentï¼š
+     Android Intentæ˜¯ä¸€ä¸ªåœ¨androidæ‰‹æœºä¸Šå¯åŠ¨intentçš„æ–¹å¼ã€‚
+ * å¯¹äºè±Œè±†èšç™¾å®è¢‹è€Œè¨€ï¼Œéœ€è¦ç»¼åˆä¸¤ç§çš„ç‰¹ç‚¹ï¼Œå®ç°ä¸€ç§é€šè¿‡jsçš„æ–¹å¼æ¥åœ¨æ‰‹æœºä¸Šå¯åŠ¨ä¸€ä¸ªintentã€‚
 
 2. Design
 ------
@@ -46,17 +46,17 @@ Android Intent
 
     i.startActivity();
 
-4. ·µ»ØÖµ
+4. è¿”å›å€¼
 --------
- µ÷ÓÃ startActivity() ·µ»ØÖµÈçÏÂ£º
+ è°ƒç”¨ startActivity() è¿”å›å€¼å¦‚ä¸‹ï¼š
  <pre>
-   "PERMISSION_DENY"  ÎŞÈ¨Ê¹ÓÃ¸Ã intent
-   "NOT_USB"          ¸Ã intent ĞèÒª usb Ä£Ê½
-   "NOT_CONNECTED"    ÎŞÊÖ»úÁ¬½Ó
-   "OK"               intent ·¢ËÍ³É¹¦
+   "PERMISSION_DENY"  æ— æƒä½¿ç”¨è¯¥ intent
+   "NOT_USB"          è¯¥ intent éœ€è¦ usb æ¨¡å¼
+   "NOT_CONNECTED"    æ— æ‰‹æœºè¿æ¥
+   "OK"               intent å‘é€æˆåŠŸ
  </pre>
 
-5. ¸÷¸ö²ÎÊıµÄº¬ÒåÓëandroid intentµÄº¬ÒåÒ»ÖÂ£º
+5. å„ä¸ªå‚æ•°çš„å«ä¹‰ä¸android intentçš„å«ä¹‰ä¸€è‡´ï¼š
 ----
 * action
  - ACTION_CALL
@@ -69,11 +69,11 @@ Android Intent
  - ACTION_TIMEZONE_CHANGED
 
 * type
- - ÏÔÊ½Ö¸¶¨IntentµÄÊı¾İÀàĞÍ£¨MIME£©
+ - æ˜¾å¼æŒ‡å®šIntentçš„æ•°æ®ç±»å‹ï¼ˆMIMEï¼‰
 * data
- - Ö´ĞĞ¶¯×÷Òª²Ù×÷µÄÊı¾İ
+ - æ‰§è¡ŒåŠ¨ä½œè¦æ“ä½œçš„æ•°æ®
 * category
- - ±»Ö´ĞĞ¶¯×÷µÄ¸½¼ÓĞÅÏ¢£¬¸ñÊ½Îªjson
+ - è¢«æ‰§è¡ŒåŠ¨ä½œçš„é™„åŠ ä¿¡æ¯ï¼Œæ ¼å¼ä¸ºjson
 
 * Constant
  - CATEGORY_BROWSABLE
@@ -85,39 +85,38 @@ Android Intent
  
 
 * component
- - Ö¸¶¨IntentµÄµÄÄ¿±ê×é¼şµÄÀàÃû³Æ
+ - æŒ‡å®šIntentçš„çš„ç›®æ ‡ç»„ä»¶çš„ç±»åç§°
 * extras
- - ÆäËüËùÓĞ¸½¼ÓĞÅÏ¢µÄ¼¯ºÏ£¬¸ñÊ½Îªjson
+ - å…¶å®ƒæ‰€æœ‰é™„åŠ ä¿¡æ¯çš„é›†åˆï¼Œæ ¼å¼ä¸ºjson
 
-<pre>
- extra Êı¾İ¸ñÊ½¶¨ÒåÈçÏÂ£º
- {
-   "key":"",
-   "value":"",
-   "type":""
- }
+    extra æ•°æ®æ ¼å¼å®šä¹‰å¦‚ä¸‹ï¼š
+     {
+       "key":"",
+       "value":"",
+       "type":""
+     }
 
- ÆäÖĞ type È¡ÖµÈçÏÂ£º
- e    extra ÖĞµÄ value Îª string ÀàĞÍ
- esn  extra ÖĞµÄºöÂÔ value µÄÈ¡Öµ
- ez   extra ÖĞµÄ value Îª bool ÀàĞÍ
- ei   extra ÖĞµÄ value Îª int ÀàĞÍ
- el   extra ÖĞµÄ value Îª long ÀàĞÍ
- ef   extra ÖĞµÄ value Îª float ÀàĞÍ
- eu   extra ÖĞµÄ value Îª uri ÀàĞÍ
- ecn  extra ÖĞµÄ value Îª component name(Ö»ÓĞ usb Ä£Ê½£¬¸ÃÖµÓĞĞ§)
- eia  extra ÖĞµÄ value Îª int array ÀàĞÍ(Èç£º1, 2, 3)
- ela  extra ÖĞµÄ value Îª long array ÀàĞÍ(Èç£º1, 2, 3)
- efa  extra ÖĞµÄ value Îª float array ÀàĞÍ(Èç£º1.1, 2.1, 3)
- </pre>
+    å…¶ä¸­ type å–å€¼å¦‚ä¸‹ï¼š
+    
+    * e    extra ä¸­çš„ value ä¸º string ç±»å‹
+    * esn  extra ä¸­çš„å¿½ç•¥ value çš„å–å€¼
+    * ez   extra ä¸­çš„ value ä¸º bool ç±»å‹
+    * ei   extra ä¸­çš„ value ä¸º int ç±»å‹
+    * el   extra ä¸­çš„ value ä¸º long ç±»å‹
+    * ef   extra ä¸­çš„ value ä¸º float ç±»å‹
+    * eu   extra ä¸­çš„ value ä¸º uri ç±»å‹
+    * ecn  extra ä¸­çš„ value ä¸º component name(åªæœ‰ usb æ¨¡å¼ï¼Œè¯¥å€¼æœ‰æ•ˆ)
+    * eia  extra ä¸­çš„ value ä¸º int array ç±»å‹(å¦‚ï¼š1, 2, 3)
+    * ela  extra ä¸­çš„ value ä¸º long array ç±»å‹(å¦‚ï¼š1, 2, 3)
+    * efa  extra ä¸­çš„ value ä¸º float array ç±»å‹(å¦‚ï¼š1.1, 2.1, 3)
 
 * flags
- - ¿ØÖÆÆô¶¯²ÎÊı
+ - æ§åˆ¶å¯åŠ¨å‚æ•°
 
- 
+
 6. Sample
 ------
-* ÔÚµØÍ¼ÉÏ²éÑ¯µØµã
+* åœ¨åœ°å›¾ä¸ŠæŸ¥è¯¢åœ°ç‚¹
 <pre>
     var i = new AndroidIntent("android.intent.action.VIEW", // action
                          "", // type
@@ -128,7 +127,7 @@ Android Intent
     i.startActivity();
 </pre>
 
-* ·¢¶ÌĞÅ
+* å‘çŸ­ä¿¡
 <pre>
     var extras = [];
     var extra = {};
@@ -145,44 +144,44 @@ Android Intent
     i.startActivity();
 </pre>
 
-* Ìí¼ÓÈÕÀú
+* æ·»åŠ æ—¥å†
 <pre>
     var extras = [];
     var extra = {};
     
-    // ÈÕÀúÊÂ¼şµÄÃû³Æ
+    // æ—¥å†äº‹ä»¶çš„åç§°
     extra.key = "title";
     extra.value = "title_test";
     extras.push(extra);
 
-    // ÊÂ¼şµÄÃèÊö
+    // äº‹ä»¶çš„æè¿°
     extra = {};
     extra.key = "description";
     extra.value = "description_test111";
     extras.push(extra);
 
-    // ÊÂ¼şµÄ¿ªÊ¼Ê±¼ä
+    // äº‹ä»¶çš„å¼€å§‹æ—¶é—´
     extra = {};
     extra.key = "beginTime";
     extra.value = "1351684995000";
     extra.type = "el";
     extras.push(extra);
 
-    // ÊÂ¼şµÄ½áÊøÊ±¼ä
+    // äº‹ä»¶çš„ç»“æŸæ—¶é—´
     extra = {};
     extra.key = "endTime";
     extra.value = "1351740880000";
     extra.type = "el";
     extras.push(extra);
 
-    // ±ê¼ÇÊÇ·ñÎª "È«Ìì"
+    // æ ‡è®°æ˜¯å¦ä¸º "å…¨å¤©"
     extra = {};
     extra.key = "allDay";
     extra.value = "false";
     extra.type = "ez";
     extras.push(extra);
 
-    // ÊÂ¼şµÄµØµã
+    // äº‹ä»¶çš„åœ°ç‚¹
     extra = {};
     extra.key = "eventLocation";
     extra.value = "The gym";
