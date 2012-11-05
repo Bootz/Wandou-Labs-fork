@@ -56,20 +56,13 @@
 
 * content-type 的主要类型(特殊类型的格式需要特殊约定):
 
-    - {"application", "apps", "apk"},
-    - {"application/zip", "zip", "zip"},
-    - {"application/vnd.android.package-archive", "apps", "apk"},
-    - {"image", "photo", "*"},
-    - {"image/jpeg", "photo", "jpg"},
-    - {"image/png", "photo", "png"},
-    - {"image/bmp", "photo", "bmp"},
-    - {"image/tiff", "photo", "tiff"},
-    - {"video", "video", "*"},
-    - {"video/mp4", "video", "mp4"},
-    - {"audio", "music", "*"},
-    - {"audio/mp3", "music", "mp3"},
-    - {"book", "book", "*"},
-    - {"file", "file", "*"},
+    * 类型为APK: application
+    * 类型为Zip: application/zip
+    * 类型为图片: image
+    * 类型为视频: video
+    * 类型为音频: audio
+    * 类型为电子书: book
+    * 类型为其它文件: file
 
 3. 百宝袋扩展Sample
 ---------
