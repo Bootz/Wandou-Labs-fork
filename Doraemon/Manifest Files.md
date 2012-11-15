@@ -160,7 +160,7 @@ Manifest 版本号。为了与当前版本的 Chrome 兼容，取值应该使用
 	file:///foo*
 	http://127.0.0.1/*
 	*://mail.google.com/*
-	snappea-extension://*/*
+	wdj-extension://*/*
 	<all_urls>
 
 `<all_urls>` 可以匹配任意地址，前提是地址属于上述允许的任何一个 scheme。
@@ -206,3 +206,24 @@ JavaScript 文件何时插入，可选的值包括：`'document_start'`、`'docu
 
 
   [icon]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/pictures/icon_sample.png?raw=true
+
+
+## 关于扩展本地路径(Local_Path)
+
+#### 在豌豆荚 2.26 及以后的版本中，使用以下方式访问本地路径：
+
+	* wdj-extension://__MSG_@@extension_id__/[目录名]/文件名
+
+	*例子:
+
+	* html中绝对地址引用图片：<img src="wdj-extension://__MSG_@@extension_id__/image/banner.jpg" />
+	
+	* css中引用当前文件上一级目录背景：.banner{background:url(../banner.jpg);}
+
+	* 引用插件根目录的iframe：<iframe src="/banner.htm"></iframe>
+
+	* 配置插件首页为本地文件:
+
+	* "launch": {
+	*       "web_url": "wdj-extension://__MSG_@@extension_id__/index.htm"
+	* }
