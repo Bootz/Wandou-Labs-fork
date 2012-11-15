@@ -212,18 +212,18 @@ JavaScript 文件何时插入，可选的值包括：`'document_start'`、`'docu
 
 #### 在豌豆荚 2.26 及以后的版本中，使用以下方式访问本地路径：
 
-	* wdj-extension://__MSG_@@extension_id__/[目录名]/文件名
+wdj-extension://__MSG_@@extension_id__/[目录名]/文件名
 
-	*例子:
+例子:
 
-	* html中绝对地址引用图片：<img src="wdj-extension://__MSG_@@extension_id__/image/banner.jpg" />
-	
-	* css中引用当前文件上一级目录背景：.banner{background:url(../banner.jpg);}
+1、html中绝对地址引用图片：<img src="wdj-extension://__MSG_@@extension_id__/image/banner.jpg" />
 
-	* 引用插件根目录的iframe：<iframe src="/banner.htm"></iframe>
+2、css中引用当前文件上一级目录背景：.banner{background:url(../banner.jpg);}
 
-	* 配置插件首页为本地文件:
+3、引用插件根目录的iframe：<iframe src="/banner.htm"></iframe>
 
-	* "launch": {
-	*       "web_url": "wdj-extension://__MSG_@@extension_id__/index.htm"
-	* }
+4、配置插件首页为本地文件:
+
+	"launch": {
+       "web_url": "wdj-extension://__MSG_@@extension_id__/index.htm"
+    }
