@@ -51,7 +51,7 @@ Android Intent
  调用 startActivity() 返回值如下：
  <pre>
    "PERMISSION_DENY"  无权使用该 intent
-   "NOT_USB"          该 intent 需要 usb 模式
+   "SYSTEM_ERROR"     系统错误
    "NOT_CONNECTED"    无手机连接
    "OK"               intent 发送成功
  </pre>
