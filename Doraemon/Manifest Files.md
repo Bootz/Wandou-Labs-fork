@@ -8,7 +8,7 @@ Manifest 是一个必须的文件，放在扩展打包的根目录下，用于�
 
 下面列举了所有 manifest.json 支持的字段，其中只有 `name` 和 `version` 字段是必须的。
 
-	{
+    {
 		// Required
 		"name": "My Extension",
 		"version": "versionString",
@@ -216,11 +216,11 @@ wdj-extension://__MSG_@@extension_id__/[目录名]/文件名
 
 例子:
 
-1、html中绝对地址引用图片：<img src="wdj-extension://__MSG_@@extension_id__/image/banner.jpg" />
+1、html中绝对地址引用图片：&lt;img src="wdj-extension://__MSG_@@extension_id__/image/banner.jpg" /&gt;
 
 2、css中引用当前文件上一级目录背景：.banner{background:url(../banner.jpg);}
 
-3、引用插件根目录的iframe：<iframe src="/banner.htm"></iframe>
+3、引用插件根目录的iframe：&lt;iframe src="/banner.htm"&gt;&lt;/iframe&gt;
 
 4、配置插件首页为本地文件:
 
