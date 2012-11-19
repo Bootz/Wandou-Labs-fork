@@ -2,6 +2,8 @@
 
 豌豆荚扩展所使用的 manifest.json 基于 Google Chrome Extensions 使用的 [manifest.json](http://code.google.com/chrome/extensions/manifest.html) 格式进行扩展。
 
+您可以使用Manifest Builder生成本文件：[http://www.wandoujia.com/webstore/dev/manifestbuilder](http://www.wandoujia.com/webstore/dev/manifestbuilder)
+
 ## 概述
 
 Manifest 是一个必须的文件，放在扩展打包的根目录下，用于保存扩展的配置信息。
