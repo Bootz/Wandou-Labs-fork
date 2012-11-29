@@ -245,8 +245,8 @@ privacy_permissions 是扩展可能用到的权限的集合。
     }]
 
   [icon]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/pictures/icon_sample.png?raw=true
-  [android_app_required]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/pictures/app_required.png?raw=true
-  [android_app_optional]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/pictures/app_optional.png?raw=true
+  [android_app_required]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/pictures/app_required.jpg?raw=true
+  [android_app_optional]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/pictures/app_optional.jpg?raw=true
 
 ## 关于扩展本地路径(Local_Path)
 
