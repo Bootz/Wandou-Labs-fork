@@ -199,17 +199,17 @@ JavaScript 文件何时插入，可选的值包括：`'document_start'`、`'docu
 
 ### minimum_client_version
 
-    扩展可以支持的豌豆荚客户端最低版本号（[类似 Chrome 的 `minimum_chrome_version`](http://code.google.com/chrome/extensions/manifest.html#minimum_chrome_version)）。格式与 `version` 一致。
+扩展可以支持的豌豆荚客户端最低版本号（[类似 Chrome 的 `minimum_chrome_version`](http://code.google.com/chrome/extensions/manifest.html#minimum_chrome_version)）。格式与 `version` 一致。
 
 ### user_agent
 
-    可以使用 user_agent 更改扩展页面请求的 user-agent。不指定将使用豌豆荚默认的 user-agent。
+可以使用 user_agent 更改扩展页面请求的 user-agent。不指定将使用豌豆荚默认的 user-agent。
 
 ### privacy_permissions
 
-    如果扩展需要获取手机信息等高级权限，需要在 manifest 中声明需要获取的权限。
+如果扩展需要获取手机信息等高级权限，需要在 manifest 中声明需要获取的权限。
 
-    privacy_permissions 是扩展可能用到的权限的集合。
+privacy_permissions 是扩展可能用到的权限的集合。
 
 权限说明：
 
