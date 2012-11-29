@@ -222,9 +222,31 @@ privacy_permissions 是扩展可能用到的权限的集合。
     "privacy_permissions": [
          "device", "social"
     ]
+    
+### android_apps
+
+如果内容站依赖手机中安装某一或某些应用需要声明 android_apps
+
+需要提供应用 apk 的包名并标记扩展是否必须安装某应用（默认值为 false）。
+
+如果扩展标记为必须安装某应用，则没有安装或者没有连接手机，提示如下：
+
+![提示][android_app_required]
+
+如果扩展标记为不是必须安装某应用，则没有安装或者没有连接手机，提示如下：
+
+![提示][android_app_optional]
+
+例子：
+
+    "android_apps": [{
+        "package_name": "com.wandoujia.phoenix2",
+        "required": false
+    }]
 
   [icon]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/pictures/icon_sample.png?raw=true
-
+  [android_app_required]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/pictures/app_required.png?raw=true
+  [android_app_optional]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/pictures/app_optional.png?raw=true
 
 ## 关于扩展本地路径(Local_Path)
 
