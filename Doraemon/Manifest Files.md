@@ -199,13 +199,29 @@ JavaScript 文件何时插入，可选的值包括：`'document_start'`、`'docu
 
 ### minimum_client_version
 
-扩展可以支持的豌豆荚客户端最低版本号（[类似 Chrome 的 `minimum_chrome_version`](http://code.google.com/chrome/extensions/manifest.html#minimum_chrome_version)）。格式与 `version` 一致。
+    扩展可以支持的豌豆荚客户端最低版本号（[类似 Chrome 的 `minimum_chrome_version`](http://code.google.com/chrome/extensions/manifest.html#minimum_chrome_version)）。格式与 `version` 一致。
 
 ### user_agent
 
-可以使用 user_agent 更改扩展页面请求的 user-agent。不指定将使用豌豆荚默认的 user-agent。
+    可以使用 user_agent 更改扩展页面请求的 user-agent。不指定将使用豌豆荚默认的 user-agent。
+
+### privacy_permissions
+
+    如果扩展需要获取手机信息等高级权限，需要在 manifest 中声明需要获取的权限。
+
+    privacy_permissions 是扩展可能用到的权限的集合。
+
+权限说明：
+
+    social: 如果扩展需要分享内容到社交网络，需要声明 social 权限
+    device: 如果扩展获取手机信息（如：手机屏幕分比率），需要声明 device 权限
 
 
+例子：使用获取手机信息和分享内容到社交网络权限
+
+    "privacy_permissions": [
+         "device", "social"
+    ]
 
   [icon]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/pictures/icon_sample.png?raw=true
 
