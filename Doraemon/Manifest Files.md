@@ -11,7 +11,7 @@ Manifest 是一个必须的文件，放在扩展打包的根目录下，用于�
 下面列举了所有 manifest.json 支持的字段，其中只有 `name` 和 `version` 字段是必须的。
 
     {
-		// Required
+    	// Required
 		"name": "My Extension",
 		"version": "versionString",
 		"manifest_version": 2,
@@ -26,16 +26,18 @@ Manifest 是一个必须的文件，放在扩展打包的根目录下，用于�
 		"homepage_url": "http://path/to/homepage",
 		"permissions": ["http://*.baidu.com/*", "http://*.sina.com.cn/*"],
 		"minimum_client_version": "versionString",
-        "user_agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.16 (KHTML, like Gecko) Chrome/24.0.1305.3 Safari/537.16"
+        "user_agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.16 (KHTML, like Gecko) Chrome/24.0.1305.3 Safari/537.16",
+        "privacy_permissions": ["device", "social"],
+        "android_apps": [{"package_name": "com.wandoujia.phoenix2", "required": false}]
 	}
 
 ## 字段
 
-### name
+#### name
 
 扩展名称。显示在扩展管理界面、扩展下载对话框以及扩展商店。为了与 Chrome 兼容，这个字段不应该超过 45 个字符。未来会支持国际化。
 
-### version
+#### version
 
 版本号。由点号分隔的 1 个到 4 个整数。为了与 Chrome 兼容，每一个整数必须介于 0 到 65535 之间（包括 0 和 65535），且不能包含前导 0。因此，`012` 和 `98765` 都不能用做版本号中的整数。
 
@@ -48,15 +50,15 @@ Manifest 是一个必须的文件，放在扩展打包的根目录下，用于�
 * `"version": "1.2.34"`
 * `"version": "1.2.34.5678"`
 
-### manifest_version
+#### manifest_version
 
 Manifest 版本号。为了与当前版本的 Chrome 兼容，取值应该使用数字 2。
 
-### description
+#### description
 
 扩展描述。显示在扩展管理界面和扩展下载对话框。为了与 Chrome 兼容，这个字段应该使用不超过 132 个字符的纯文本内容（不能使用 HTML）。未来会支持国际化。
 
-### icons
+#### icons
 
 图标文件集合。豌豆荚使用尺寸为 16 和 72 的图标。为了与 Chrome 兼容，如果找不到对应尺寸的图标，会使用尺寸最相近的图标（优先使用尺寸更大而非更小的）进行缩放处理。推荐使用 PNG 格式的图片，不过也支持其它 WebKit 浏览器能正常显示的图片。
 
@@ -64,7 +66,7 @@ Manifest 版本号。为了与当前版本的 Chrome 兼容，取值应该使用
 		"16": "icon16.png",
 		"72": "icon72.png"
 	}
-### 百宝袋扩展图标规范
+#### 百宝袋扩展图标规范
 * 大小72*72
 * 正方形
 * 图形区域大小 60*60 ，绝对居中，图形需填满图形区域并不能超出图形区域
@@ -72,7 +74,7 @@ Manifest 版本号。为了与当前版本的 Chrome 兼容，取值应该使用
 
 ![图标规范][icon]
 
-### app
+#### app
 
 应用配置信息。配置这个应用的启动页面地址，以及所需要用到的地址范围。
 
@@ -100,11 +102,11 @@ Manifest 版本号。为了与当前版本的 Chrome 兼容，取值应该使用
 		]
 	}
 
-#### urls
+##### urls
 
 应用所要用到的地址）。这部分地址的浏览会在豌豆荚里面无缝切换，但如果用户点击这部分地址覆盖范围外的链接，则链接目标会在浏览器中打开。
 
-#### launch
+##### launch
 
 启动页面地址。如果启动页面是 HTTP(S) 地址，则使用 `web_url`；如果是扩展打包资源中的页面，则使用 `local_path`。
 
@@ -112,7 +114,7 @@ Manifest 版本号。为了与当前版本的 Chrome 兼容，取值应该使用
 
 指定远程启动页面。其取值应该为使用 HTTP 或 HTTPS 协议的绝对地址。
 
-#### local_path
+##### local_path
 
 指定本地启动页面。其取值应该为相对于扩展打包目录的相对地址。
 
@@ -122,11 +124,11 @@ Manifest 版本号。为了与当前版本的 Chrome 兼容，取值应该使用
 		}
 	}
 
-#### navigation
+##### navigation
 
 零个到八个导航入口的地址。每一个导航用口使用 `label` 属性来指定显示名称，使用 `web_url` 属性或 `local_path` 属性指定链接地址。如果链接目标指向 HTTP(S) 地址，就使用 `web_url`；如果链接目标指向扩展包内的页面，就使用 `local_path` 并使用相对路径。
 
-### content_scripts
+## content_scripts
 
 需要运行在页面上下文中的脚本。
 
@@ -189,23 +191,23 @@ JavaScript 文件何时插入，可选的值包括：`'document_start'`、`'docu
 
 控制插入内容是只插入到 `top` frame 还是所有的 frame。默认值为 `false`。
 
-### homepage_url
+## homepage_url
 
 扩展首页地址。如果扩展通过扩展商店发布，则默认指向扩展商店详情页。
 
-### permissions
+## permissions
 
 指定跨域访问。如果需要跨域访问，需要在这里指定需要跨域访问的规则。
 
-### minimum_client_version
+## minimum_client_version
 
 扩展可以支持的豌豆荚客户端最低版本号（[类似 Chrome 的 `minimum_chrome_version`](http://code.google.com/chrome/extensions/manifest.html#minimum_chrome_version)）。格式与 `version` 一致。
 
-### user_agent
+## user_agent
 
 可以使用 user_agent 更改扩展页面请求的 user-agent。不指定将使用豌豆荚默认的 user-agent。
 
-### privacy_permissions
+## privacy_permissions
 
 如果扩展需要获取手机信息等高级权限，需要在 manifest 中声明需要获取的权限。
 
@@ -223,7 +225,7 @@ privacy_permissions 是扩展可能用到的权限的集合。
          "device", "social"
     ]
     
-### android_apps
+## android_apps
 
 如果内容站依赖手机中安装某一或某些应用需要声明 android_apps
 
