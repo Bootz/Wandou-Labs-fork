@@ -24,6 +24,8 @@
 *  从豌豆荚2.20版本开始，支持Web Fonts
 *  从豌豆荚2.20版本开始，支持支付宝支付
 *  从豌豆荚2.24版本开始，支持zip包解压，详情请查看[Zipped Data Download Spec]
+*  从豌豆荚2.33版本开始，支持判断手机上某个app是否安装，详细文档参加《[manifest files]》中android_apps部分
+*  从豌豆荚2.33版本开始，支持获取手机硬件信息，详细文档参加《[manifest files]》中privacy_permissions部分
 
 ### 2.3 开发扩展系统时Content Script的Guideline
 * 页面宽度修改为适应豌豆荚的默认宽度：780px（考虑会有滚动条，建议控制在760px内）
@@ -113,7 +115,12 @@
                 "web_url": "http://awardtest.wandoujia.com/p/list"
             }
             ]
-        }
+        },
+	"privacy_permissions": ["device", "social"],
+	"android_apps": [{
+	    "package_name": "com.wandoujia.phoinex2",
+	    "required": false
+	}]
     }
 
 如果manifest.json文件中用到了其他文件，比如*.js, *.css等，也需要在这个目录中创建这些文件。
