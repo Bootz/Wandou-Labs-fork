@@ -116,11 +116,11 @@
             }
             ]
         },
-	"privacy_permissions": ["device", "social"],
-	"android_apps": [{
-	    "package_name": "com.wandoujia.phoinex2",
-	    "required": false
-	}]
+        "privacy_permissions": ["device", "social"],
+        "android_apps": [{
+            "package_name": "com.wandoujia.phoinex2",
+            "required": false
+        }]
     }
 
 如果manifest.json文件中用到了其他文件，比如*.js, *.css等，也需要在这个目录中创建这些文件。
