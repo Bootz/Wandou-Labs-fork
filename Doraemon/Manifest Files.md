@@ -219,6 +219,7 @@ privacy_permissions 是扩展可能用到的权限的集合。
     device: 如果扩展获取手机信息（如：手机屏幕分比率），需要声明 device 权限
 
 SDK：[narya_wiki]
+
 Sample：[narya_sample]
 
 例子：使用获取手机信息和分享内容到社交网络权限
