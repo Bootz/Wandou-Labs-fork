@@ -217,6 +217,7 @@ privacy_permissions 是扩展可能用到的权限的集合。
 
     social: 如果扩展需要分享内容到社交网络，需要声明 social 权限
     device: 如果扩展获取手机信息（如：手机屏幕分比率），需要声明 device 权限
+    SDK: SDK[narya_wiki]
 
 
 例子：使用获取手机信息和分享内容到社交网络权限
@@ -249,6 +250,7 @@ privacy_permissions 是扩展可能用到的权限的集合。
   [icon]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/pictures/icon_sample.png?raw=true
   [android_app_required]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/pictures/app_required.jpg?raw=true
   [android_app_optional]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/pictures/app_optional.jpg?raw=true
+  [narya_wiki]: https://github.com/wandoulabs/narya/wiki
 
 ## 关于扩展本地路径(Local_Path)
 
