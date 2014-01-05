@@ -4,12 +4,12 @@ Android Intent
 1. Overview
 ------
 
- * Android Intent的目的是为了给开发者提供一个通过js调用在android手机上启动一个intent的方法。
- * Web Intent：
-     Web Intent是类似与android intent的一个机制，但是它的目的还是用于web，即在web上模拟android intent。
- * Android Intent：
-     Android Intent是一个在android手机上启动intent的方式。
- * 对于豌豆荚百宝袋而言，需要综合两种的特点，实现一种通过js的方式来在手机上启动一个intent。
+* Android Intent is aimed to provide developers with an intent to start a android phone in the method call via js.
+  * Web Intent:
+      Web Intent is a mechanism similar to the android intent, but its purpose is for web, namely simulated android intent on the web.
+  * Android Intent:
+      Android Intent is a startup intent on android phones in the way.
+  * For pea pod treasure bag, the need for a comprehensive two features to achieve a passing js way to start an intent on the phone.
 
 2. Design
 ------
@@ -46,19 +46,19 @@ Android Intent
 
     i.startActivity();
 
-4. 返回值
+Return Value
 --------
- 调用 startActivity() 返回值如下：
+ Call startActivity () return value is as follows :
  <pre>
-   "PERMISSION_DENY"  无权使用该 intent
-   "SYSTEM_ERROR"     系统错误
-   "NOT_CONNECTED"    无手机连接
-   "OK"               intent 发送成功
- </pre>
+   "PERMISSION_DENY" The intent is not entitled to use
+   "SYSTEM_ERROR" System Error
+   "NOT_CONNECTED" no phone connection
+   "OK" intent sent successfully
+ </ pre>
 
-5. 各个参数的含义与android intent的含义一致：
+5 android intent and meaning of the meaning of each parameter is consistent :
 ----
-* action
+* Action
  - ACTION_CALL
  - ACTION_EDIT
  - ACTION_MAIN
@@ -68,12 +68,12 @@ Android Intent
  - ACTION_SCREEN_ON
  - ACTION_TIMEZONE_CHANGED
 
-* type
- - 显式指定Intent的数据类型（MIME）
-* data
- - 执行动作要操作的数据
-* category
- - 被执行动作的附加信息，格式为json
+* Type
+ - Intent explicitly specify data types (MIME)
+* Data
+ - Perform an action to operate the data
+* Category
+ - Additional information is to perform an action , the format is json
 
 * Constant
  - CATEGORY_BROWSABLE
@@ -84,39 +84,38 @@ Android Intent
 
  
 
-* component
- - 指定Intent的的目标组件的类名称
-* extras
- - 其它所有附加信息的集合，格式为json
+* Component
+ - Specify the class name of the target component of Intent
+* Extras
+ - All other additional information collection , json format
 
-    extra 数据格式定义如下：
+    extra data format as follows :
      {
-       "key":"",
-       "value":"",
-       "type":""
+       "key": "",
+       "value": "",
+       "type": ""
      }
 
-    其中 type 取值如下：
+    Which type values ​​are as follows :
     
-    * e    extra 中的 value 为 string 类型
-    * esn  extra 中的忽略 value 的取值
-    * ez   extra 中的 value 为 bool 类型
-    * ei   extra 中的 value 为 int 类型
-    * el   extra 中的 value 为 long 类型
-    * ef   extra 中的 value 为 float 类型
-    * eu   extra 中的 value 为 uri 类型
-    * ecn  extra 中的 value 为 component name(只有 usb 模式，该值有效)
-    * eia  extra 中的 value 为 int array 类型(如：1, 2, 3)
-    * ela  extra 中的 value 为 long array 类型(如：1, 2, 3)
-    * efa  extra 中的 value 为 float array 类型(如：1.1, 2.1, 3)
+    * E extra in the value of string type
+    * Esn extra ignore the value of values
+    * Ez extra value to bool type in
+    * Ei extra value of type int
+    * El extra in the value of long type
+    * Ef extra value to float in
+    * Eu extra type of value for the uri
+    * Ecn extra in the value of component name ( only usb mode, this value is valid )
+    * Eia extra in value as int array types ( eg : 1 , 2, 3 )
+    * Ela extra for the long array of value types ( eg : 1 , 2, 3 )
+    * Efa extra in the value of float array types ( eg : 1.1 , 2.1, 3 )
 
-* flags
- - 控制启动参数
-
+* Flags
+ - Control startup parameters
 
 6. Sample
 ------
-* 在地图上查询地点
+* Query location on the map
 <pre>
     var i = new AndroidIntent("android.intent.action.VIEW", // action
                          "", // type
@@ -127,7 +126,7 @@ Android Intent
     i.startActivity();
 </pre>
 
-* 发短信
+* Texting
 <pre>
     var extras = [];
     var extra = {};
@@ -144,44 +143,44 @@ Android Intent
     i.startActivity();
 </pre>
 
-* 添加日历
+* Add Calendar
 <pre>
     var extras = [];
     var extra = {};
     
-    // 日历事件的名称
+    // Name calendar of events
     extra.key = "title";
     extra.value = "title_test";
     extras.push(extra);
 
-    // 事件的描述
+    // Description of the event
     extra = {};
     extra.key = "description";
     extra.value = "description_test111";
     extras.push(extra);
 
-    // 事件的开始时间
+    // Start time of the event
     extra = {};
     extra.key = "beginTime";
     extra.value = "1351684995000";
     extra.type = "el";
     extras.push(extra);
 
-    // 事件的结束时间
+    // End time of the event
     extra = {};
     extra.key = "endTime";
     extra.value = "1351740880000";
     extra.type = "el";
     extras.push(extra);
 
-    // 标记是否为 "全天"
+    // Mark is "all day"
     extra = {};
     extra.key = "allDay";
     extra.value = "false";
     extra.type = "ez";
     extras.push(extra);
 
-    // 事件的地点
+    // Place of incident
     extra = {};
     extra.key = "eventLocation";
     extra.value = "The gym";
