@@ -46,7 +46,7 @@ Android Intent
 
     i.startActivity();
 
-Return Value
+4. Return Value
 --------
  Call startActivity () return value is as follows :
  <pre>
@@ -56,7 +56,7 @@ Return Value
    "OK" intent sent successfully
  </ pre>
 
-5 android intent and meaning of the meaning of each parameter is consistent :
+5. android intent and meaning of the meaning of each parameter is consistent :
 ----
 * Action
  - ACTION_CALL
@@ -89,7 +89,7 @@ Return Value
 * Extras
  - All other additional information collection , json format
 
-    extra data format as follows :
+     extra data format as follows :
      {
        "key": "",
        "value": "",
