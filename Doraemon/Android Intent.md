@@ -14,7 +14,6 @@ Android Intent
 2. Design
 ------
 
-
     interface AndroidIntent { 
         attribute DOMString action; 
         attribute DOMString type; 
@@ -48,16 +47,20 @@ Android Intent
 
 4. Return Value
 --------
+
  Call startActivity () return value is as follows :
- <pre>
+ 
+<pre>
    "PERMISSION_DENY" The intent is not entitled to use
    "SYSTEM_ERROR" System Error
    "NOT_CONNECTED" no phone connection
    "OK" intent sent successfully
- </ pre>
+</pre>
 
-5. android intent and meaning of the meaning of each parameter is consistent :
-----
+
+5. Android intent and meaning of each parameter :
+--------
+
 * Action
  - ACTION_CALL
  - ACTION_EDIT
@@ -70,8 +73,10 @@ Android Intent
 
 * Type
  - Intent explicitly specify data types (MIME)
+
 * Data
  - Perform an action to operate the data
+
 * Category
  - Additional information is to perform an action , the format is json
 
@@ -82,19 +87,20 @@ Android Intent
  - CATEGORY_LAUNCHER
  - CATEGORY_PREFERENCE
 
- 
-
 * Component
  - Specify the class name of the target component of Intent
+
 * Extras
  - All other additional information collection , json format
 
+<pre>
      extra data format as follows :
      {
        "key": "",
        "value": "",
        "type": ""
      }
+</pre>
 
     Which type values ​​are as follows :
     
@@ -115,7 +121,9 @@ Android Intent
 
 6. Sample
 ------
+
 * Query location on the map
+
 <pre>
     var i = new AndroidIntent("android.intent.action.VIEW", // action
                          "", // type
@@ -127,6 +135,7 @@ Android Intent
 </pre>
 
 * Texting
+
 <pre>
     var extras = [];
     var extra = {};
@@ -144,6 +153,7 @@ Android Intent
 </pre>
 
 * Add Calendar
+
 <pre>
     var extras = [];
     var extra = {};
