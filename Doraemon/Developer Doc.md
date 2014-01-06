@@ -1,83 +1,86 @@
-百宝袋开发指南（开发者版本）
+Babolat bags Developer's Guide (Dev. Edition)
 ================
-1. 豌豆荚的百宝袋概述
+1. treasure bag outlined pea pods
 ----------
 
-* 百宝袋是一种新的扩展机制，可以快速帮助开发者简单、自动、批量化的把各个内容站接入到豌豆荚 Windows 版。
-* 对开发者而言，这是一个良性的生态系统，拥有千万用户的豌豆荚将为开发者提供免费的推广平台。
-* 在这里，开发者不需要担心如何寻找用户、如何优化SEO、如何进行品牌推广，百宝袋开放平台将给开发者带来网站流量、下载量、用户数、活跃度、品牌口碑。
-* 如果您是一位开发者，欢迎您加入豌豆荚开发者交流群：250241844（申请时请表明自己的开发者身份哈）
+* Babolat bag is a new extension mechanism that can quickly help developers simple, automatic, batch-oriented station access to the contents of each pea pod Windows version.
+* For developers, this is a healthy ecosystem, with millions of users pea pod will provide developers with free promotional platform.
+* Here, developers do not need to worry about how to find the user, how to optimize SEO, how to brand promotion, Babolat bags open platform will give developers bring web traffic, downloads, number of users, activity, brand reputation.
+* If you're a developer, you are welcome to join the group pea pods Developer:250241844 (please indicate the time of application developers who own identity Ha)
 
-2. 扩展系统开发说明（开发者详读）
+2. Expansion System Development Description (developer Read)
 ----------
 
-    每一个扩展对应着一个内容站。扩展系统使开发者有能力快速、大量的提供适合展现在豌豆荚的内容。
+   Each expansion station corresponds to a content. 
+   Expand the system so that developers have the ability to quickly and show a lot of content to provide for pea pods.
 
-### 2.1 开发者工程文档
-* MicroData介绍：文档《[MicroData]》
-* Manifest.json介绍：文档《[manifest files]》
-* Download介绍：文档《[Download Link]》
+### 2.1 Developer Documentation Project
+* MicroData Description: Documents "[MicroData]"
+* Manifest.json Description: Documents "[manifest files]"
+* Download Description: Documents "[Download Link]"
 
-### 2.2 目前扩展中webkit/css支持的特性（通用）
-* 《[Wandoujia Supported Specifications]》
-*  从豌豆荚2.20版本开始，支持[Android Intent API]
-*  从豌豆荚2.20版本开始，支持Web Fonts
-*  从豌豆荚2.20版本开始，支持支付宝支付
-*  从豌豆荚2.24版本开始，支持zip包解压，详情请查看[Zipped Data Download Spec]
-*  从豌豆荚2.33版本开始，支持判断手机上某个app是否安装，详细文档参加《[manifest files]》中android_apps部分
-*  从豌豆荚2.33版本开始，支持获取手机硬件信息，详细文档参加《[manifest files]》中privacy_permissions部分
+### 2.2 is currently expanding webkit/css support features (Universal)
+* "[Wandoujia Supported Specifications]"
+* Starting from version 2.20 pea pods, support [Android Intent API]
+* Starting from version 2.20 pea pods, support Web Fonts
+* Starting from version 2.20 pea pods, support Alipay
+* Starting from version 2.24 pea pods, support extracting zip package, please see [Zipped Data Download Spec]
+* Starting from version 2.33 pea pods, supported determine whether a particular app installed on your phone, detailed documentation to participate in "[manifest files]" section in android_apps
+* Starting from version 2.33 pea pods, support access to the phone hardware information, detailed documentation to participate in "[manifest files]" section in privacy_permissions
 
-### 2.3 开发扩展系统时Content Script的Guideline
-* 页面宽度修改为适应豌豆荚的默认宽度：780px（考虑会有滚动条，建议控制在760px内）
+### 2.3 when developing extensions system
+Guideline Content Script
 
-* 请使用工作邮箱注册豌豆荚帐号后再提交扩展
+* Modified to adapt to the default page width width pea pods: 780px (considering there is a scroll bar, the proposed control within 760px)
 
-* 新扩展不允许篡改已经在线上的其它开发者开发的扩展
+* Please use your work email account and then submit registration pea pod extension
 
-* 新扩展不允许山寨或完全抄袭线上已有扩展
+* New extension has been allowed to tamper with other developers to develop the online extension
 
-* 页面中的主要内容可调用豌豆荚的 Download API （可下载资源应该遵循microdata中定义的格式，否则无法下载）进行下载，不支持的部分应打开外部浏览器(target="_default")或予以隐藏
+* New extension does not allow cottage or fully extend existing online plagiarism
 
-* 如果是难以隐藏的站外链接，直接打开外部浏览器(target="_default")
+* The main content of the page can be called pea pod Download API (downloadable resources should follow the format defined in the microdata, or can not download) to download, do not support the part should open an external browser (target = "_default") or be hide
 
-* manifest中字段：name、description为用户可见的内容，必须有完整的文案描述
+* If it is difficult to hide inbound links, directly open an external browser (target = "_default")
 
-* 原则上扩展的页面尊重原内容站的页面构成，这里面包括原内容站的登录、广告、分享、评论等等，对这些内容的去留由开发者在开发过程中自行决定，但如果保留，需要保证其在豌豆荚能够正常work 
+* Manifest in the fields : name, description of user-visible content, you must have a complete copy description
 
-* manifest.json匹配规则禁止使用http://\*/\*
+* The principle of respect for the original content page extension station page structure, which includes the original content of this station login, advertising, share, etc., to decide the fate of these elements by the developer in the development process, but if you leave the need to ensure that it can properly work in pea pods
 
-* 扩展包必须包含72*72的图标，请遵守 manifest 中的“百宝袋扩展图标规范”：《[manifest files]》
+* Manifest.json matching rules prohibit the use http://\*/\*
 
-* 扩展包的文件格式必须是UTF-8编码（无BOM）
+* Expansion Pack must contain 72 * 72 icons, observe manifest in the "treasure bag expansion icon norms”：[manifest files]
 
-* 下载时任务管理器中的任务名称不允许出现“未名名称”或乱码字符
+* Expansion pack file format must be UTF-8 encoding(no BOM)
 
-* 若扩展是涉及动态数据，数据须是真实数据，不可用假数据
+* Task Manager does not allow the task name "Unnamed name" or garbled characters download
 
-* 如果出现特殊情况跳转到了一个非内容页，可以通过后退回来
+* If the extension is related to dynamic data, the data must be real data, not with false data
 
-* 页面内的浮出层，不做特殊处理
+* If there are special circumstances to jump to a non-content page, you can retreat back
 
-* content-type 的主要类型(特殊类型的格式需要特殊约定):
+* Surfaced layer within the page, not special treatment
 
-    * 类型为APK: application
-    * 类型为Zip: application/zip
-    * 类型为图片: image
-    * 类型为视频: video
-    * 类型为音频: audio
-    * 类型为电子书: book
-    * 类型为其它文件: file
+* The main types of content-type of (a special type of format requires a special agreement):
 
-3. 百宝袋扩展Sample
+    * Type of APK: application
+    * Type of Zip: application/zip
+    * Type of image : image
+    * Type of video : video
+    * Type of Audio : audio
+    * Type of book : book
+    * Other file types : file
+
+3. Babolat bags Extended Sample
 ---------
 
-###3.1 一个百宝袋扩展必须要包含一个manifest.json文件，下面是一个例子：
+### 3.1 a treasure bag must contain a manifest.json extension file, the following is an example:
 
 
     {
-        "name": "应用搜索",
+        "name": " Application Search"
         "version": "1.0.0.0",
-        "description": "豌豆荚应用搜索.",
+        "description": "pea pod application search.",
         "content_scripts": [
         {
             "matches":["http://*.wandoujia.com/*", "http://*.wandou.in/*"],
@@ -94,41 +97,41 @@
         "app": {
             "launch": {
                 "web_url": "http://apps.wandoujia.com/"
-            },
+            }
             "navigation": [
             {
-                "label": "全部应用",
+                "label": " All Applications "
                 "web_url": "http://apps.wandoujia.com/category?id=app"
-            },
+            }
             {
-                "label": "全部游戏",
+                "label": " All games "
                 "web_url": "http://apps.wandoujia.com/category?id=game"
-            },
+            }
             {
-                "label": "装机必备",
+                "label": " installed the necessary "
                 "web_url": "http://apps.wandoujia.com/install"
-            },
+            }
             {
-                "label": "榜单家族",
+                "label": "list family "
                 "web_url": "http://apps.wandoujia.com/top"
-            },
+            }
             {
-                "label": "豌豆荚设计奖",
+                "label": " pea pod design award "
                 "web_url": "http://awardtest.wandoujia.com/p/list"
             }
             ]
-        },
+        }
         "privacy_permissions": ["device", "social"],
         "android_apps": [{
             "package_name": "com.wandoujia.phoinex2",
             "required": false
-        }]
+        } ]
     }
 
-如果manifest.json文件中用到了其他文件，比如*.js, *.css等，也需要在这个目录中创建这些文件。
-这些文件可以使用相对路径和绝对路径。
+If manifest.json file used other files, such as *.Js, *.Css, also need to create these files in this directory.
+These files can use relative and absolute paths.
 
-本例中需要的文件列表如下：
+In this example the following list of documents :
 
     manifest.json
     jquery-1.7.min.js
@@ -137,64 +140,64 @@
     icon16.png
     icon72.png
 
-下载sample包：[sample package]
+Download sample package : [sample package]
 
-4. 百宝袋开发工具介绍
+4 Babolat bags development tools introduced
 -----------
 
-### 4.1 前提
-进入开发者版本的前提是必须注册豌豆荚账号，并在豌豆荚Windows客户端登录：
-![登录豌豆荚Windows客户端][register]
+### 4.1 prerequisite
+Prerequisite for entering the developer version of the account must be registered peas and pea pods in a Windows client login :
+![Login pea pods Windows client][register]
 
-### 4.2 进入开发者模式
-![进入开发者模式][settings_1]
-![进入开发者模式][settings_2]
+### To enter developer mode 4.2
+![Enter developer mode ][settings_1]
+![Enter developer mode ][settings_2]
 
-### 4.3 管理扩展
-![进入管理扩展页面][manage]
+### 4.3 Management Extensions
+![Enter Management Extensions page][manage]
 
-### 4.4 加载本地扩展
-![加载本地扩展][load_extensions_1]
-![加载本地扩展][load_extensions_2]
-![加载本地扩展][load_extensions_3]
+### 4.4 Load local expansion
+![Load local extension ][load_extensions_1]
+![Load local extension ][load_extensions_2]
+![Load local extension ][load_extensions_3]
 
-### 4.5 调试
-![页面调试][debug_1]
-![页面调试][debug_2]
+### 4.5 Debugging
+![Page Debug][debug_1]
+![Page Debug][debug_2]
 
-### 4.6 刷新扩展
-点击“更新扩展”即可重新加载本地扩展。
-需要注意的是，有可能需要手动刷新网页。
+### 4.6 Refresh extension
+Click the "Update extensions" to reload the local expansion.
+It should be noted that there may need to manually refresh the page.
 
-![刷新扩展][reload_extension]
+![Refresh extension][reload_extension]
 
-### 4.7 打包扩展
-点击“打包扩展”，即可立即生成打包好的\*.wdx文件，同时会打开该文件的位置。
+### 4.7 expansion pack
+Click on "Pack Extension", you can immediately generate packaged \*. Wdx file, and it will open the file location .
 
-![打包扩展][package_extension]
+![Expansion pack][package_extension]
 
-### 4.7 扩展上线
-* 开发者扩展开发完毕，可以提交到豌豆荚扩展中心：http://developer.wandoujia.com/
-* 扩展的上线流程如下：
+### 4.7 extensions on-line
+* Developer extension development is completed, you can submit to the pea pod Addons: http://developer.wandoujia.com/
+* Expansion of on-line process is as follows:
 
-![打包扩展][extension_online]
+![Expansion pack][extension_online]
 
-* 注：
+* Note :
 
- - 第一次提交扩展包后，豌豆荚的审核时间是1～3天，审核通过之后会在当天上线。
- - 扩展包因失效（改版、服务不稳定、下线、法律原因）或违反豌豆荚规定下线，待扩展包恢复正常之后，须观察24小时，开发者
-   需按上线流程重新申请上线。
- - 开发者将扩展包升级之后，需要重新走审核流程。
+ - After the first expansion pack to submit audit time pea pods are 1 to 3 days , will be on the line day after approval.
+ - Expansion pack due to failure (revision, service instability, offline , for legal reasons) or breach of the provisions of pea pods off the assembly line, and then be back to normal expansion pack should be observed for 24 hours, the developer
+   Basis having to re-apply on-line process on line.
+ - After the developers will expand the package upgrade, you need to re-take the review process.
 
-* 审核及扩展下线原则：
- - 扩展的内容包括色情，淫秽，擦边球等成人内容
- - 扩展的内容涉及或影射政治敏感信息及内容
- - 扩展内含病毒
- - 扩展的内容存在误导欺骗用户的行为或者乱扣费、暗扣费
- - 扩展存在严重的bug，不能够正常使用
- - 扩展未遵守豌豆荚Content Script的Guideline规范
- - 扩展因内容站改版、开发者下线、法律限制等导致失效
-
+* Audit and extended downline principles:
+ - Expansion of content including pornography, obscenity, walking a fine line, such as adult content
+ - Expansion of content or innuendo involving politically sensitive information and content
+ - Extension containing the virus
+ - Extended Content misleading to deceive the user's behavior or arbitrary deductions, deductions dark
+ - Extended serious bug, can not properly use
+ - Extended Content Script does not comply with the Guideline pea pod specification
+ - Expansion Station revision because of its content, developers offline, legal restrictions as a result of failure
+  
   [manifest files]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/Manifest%20Files.md
   [Download Link]: https://github.com/wandoulabs/developer-documents/blob/master/Doraemon/Download%20Link.md
   [MicroData]: https://github.com/wandoulabs/developer-documents/blob/master/Microdata/App%20Microdata.md
